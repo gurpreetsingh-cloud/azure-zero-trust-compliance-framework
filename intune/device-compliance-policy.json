@@ -1,1 +1,42 @@
-{} placeholder
+{
+  "displayName": "Zero Trust Baseline Compliance Policy",
+  "description": "Minimum device requirements for resource access across all site locations. Devices failing any of these checks are marked non-compliant and blocked by Conditional Access.",
+  "platform": "Windows10AndLater",
+  "settings": {
+    "osMinimumVersion": "10.0.19044",
+    "bitLockerEnabled": true,
+    "secureBootEnabled": true,
+    "codeIntegrityEnabled": true,
+    "antivirusRequired": true,
+    "antiSpywareRequired": true,
+    "firewallEnabled": true,
+    "passwordRequired": true,
+    "passwordMinimumLength": 8,
+    "passwordRequiredType": "alphanumeric",
+    "storageRequireEncryption": true
+  },
+  "scheduledActionsForRule": [
+    {
+      "ruleName": "MarkNonCompliantAfterGracePeriod",
+      "scheduledActionConfigurations": [
+        {
+          "actionType": "block",
+          "gracePeriodHours": 24,
+          "notificationTemplateId": ""
+        },
+        {
+          "actionType": "notification",
+          "gracePeriodHours": 0,
+          "notificationTemplateId": "device-noncompliant-warning"
+        }
+      ]
+    }
+  ],
+  "assignments": {
+    "targetGroups": [
+      "SiteA-Devices",
+      "SiteB-Devices",
+      "SiteC-Devices"
+    ]
+  }
+}
