@@ -10,7 +10,7 @@ locations" logic and the "block non-compliant devices outright" logic into
 a single policy. I split them deliberately:
 
 - They answer different questions. One is about *where* you're connecting
-  from, the other is about *device health* regardless of location.
+  from the other is about *device health* regardless of location.
 - Keeping them separate means either can be adjusted or disabled
   independently without affecting the other. If trusted site IP ranges
   change, that's a one-policy edit, not a re-read of a much bigger
