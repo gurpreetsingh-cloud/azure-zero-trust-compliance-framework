@@ -34,7 +34,7 @@ terraform init
 terraform plan
 terraform apply
 ```
-The PowerShell scripts are written to run via Intune script deployment not manually - that's how this would actually be used day to day.
+The PowerShell scripts are written to run via Intune script deployment not manually that's how this would actually be used day to day.
 
 ## Tradeoffs and what I'd change with more time
 Local admin here is still a standing account, scoped per site but not time-bound. With more time I'd put this behind PIM so it's just-in-time instead. I'd also add Sentinel alerting for compliance drift and a Logic App to handle the obvious remediation cases automatically instead of relying on someone noticing.
