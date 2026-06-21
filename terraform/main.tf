@@ -1,4 +1,6 @@
-# Entry point for the Terraform configuration. This tells Terraform which provider to use to talk to Entra ID and pins a version so the code behaves consistently regardless of when or where it's run.
+# Entry point for the Terraform configuration. This tells Terraform which 
+# provider to use to talk to Entra ID and pins a version so the code 
+# behaves consistently regardless of when or where it's run.
 
 terraform {
   required_providers {
